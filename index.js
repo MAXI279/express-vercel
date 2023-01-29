@@ -4,8 +4,8 @@ const app = express();
 
 app.use(express.json({ extended: false }));
 
-app.use("/", (res, req) => {
-    res.json({
+app.use("/", (req, res) => {
+    return res.json({
         message: true,
     })
 });
@@ -13,5 +13,5 @@ app.use("/", (res, req) => {
 
 // app.use("/api/product", product);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8030;
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
